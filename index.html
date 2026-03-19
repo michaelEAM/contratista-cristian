@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio de Construcción</title>
+  <style>
+    :root {
+      --bg: #f7f7f7;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #1d4ed8;
+      --primary-2: #2563eb;
+      --shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+      --radius: 14px;
+      --max: 1100px;
+      --gap: 1.25rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 1.5rem 1.25rem;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.025em;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      background: rgba(37, 99, 235, 0.12);
+    }
+
+    .hero {
+      padding: 3.25rem 1.25rem 2.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 1rem auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 999px;
+      font-weight: 600;
+      padding: 0.75rem 1.15rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+      margin-top: 1.5rem;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-2);
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 2.25rem 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin: 0.5rem 0 1.5rem;
+      max-width: 730px;
+    }
+
+    .grid {
+      display: grid;
+      gap: var(--gap);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      flex: 1;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery .caption {
+      margin-top: 0.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer {
+      padding: 2.25rem 0;
+      background: #0f172a;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: underline;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .small {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Cristian Camilo Vanegas Pelaez</div>
+      <nav aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <h1>Soy contratista y realizo construcciones confiables</h1>
+        <p>
+          Soy <strong>Cristian Camilo Vanegas Pelaez</strong>. Transformo espacios con pintura profesional, colocación de baldosa y trabajos de
+          construcción desde cero. Mira mi trabajo y contáctame para tu próximo proyecto.
+        </p>
+        <a class="btn-primary" href="#galeria">Ver ejemplos</a>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-subtitle">
+          Cada proyecto recibe atención personalizada. Estos son algunos de los servicios que ofrezco.
+        </p>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Pintura profesional</h3>
+            <p>
+              Pintura interior y exterior con acabados lisos y texturizados. Preparación de superficies, sellado y pintura de alta durabilidad.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Colocación de baldosa</h3>
+            <p>
+              Instalación de baldosas cerámicas, porcelanato y mosaico. Nivelado de pisos, cortes precisos y juntas uniformes.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Construcción desde cero</h3>
+            <p>
+              Obras nuevas, ampliaciones y remodelaciones. Supervisión de obra, gestión de materiales y entrega dentro del plazo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <h2 class="section-title">Galería</h2>
+        <p class="section-subtitle">
+          Aquí puedes ver algunos de los trabajos que he realizado.
+        </p>
+
+        <div class="gallery">
+          <figure>
+            <img src="images/baño.jpeg" alt="acabados de baño en porcelanato" loading="lazy" />
+            <figcaption class="caption">Acabados de baño en porcelanato</figcaption>
+          </figure>
+          <figure>
+            <img src="images/cocina.jpeg" alt="" loading="lazy" />
+            <figcaption class="caption">Instalacion de cocina con acabados</figcaption>
+          </figure>
+          <figure>
+            <img src="images/escalera.jpeg" alt="" loading="lazy" />
+            <figcaption class="caption">Intalacion de escalera con estructura metalica y pasos en madera </figcaption>
+          </figure>
+          <figure>
+            <img src="images/piso en pina pescado.jpeg" alt="" loading="lazy" />
+            <figcaption class="caption">piso espina de pescado</figcaption>
+          </figure>
+          <figure>
+            <img src="images/techo led.jpeg" alt="" loading="lazy" />
+            <figcaption class="caption">Techo led</figcaption>
+          </figure>
+          <figure>
+            <img src="images/instalacion de closet.jpeg" alt="Detalle de juntas en baldosa" loading="lazy" />
+            <figcaption class="caption">instalacion de closed</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">
+          ¿Listo para empezar? Contáctame y te responderé lo antes posible.
+        </p>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+          <div class="card">
+            <h3>Información</h3>
+            <p>Guarda este contacto y escríbeme para coordinar tu proyecto.</p>
+            <p class="small"><strong>WhatsApp:</strong>  3107394303</p>
+            <p class="small"><strong>Correo:</strong> cristianpelaez1986@gmail.com</p>
+            <p class="small"><strong>Ubicación:</strong> Armenia quindio </p>
+          </div>
+
+          <div class="card">
+            <h3>Envíame un mensaje</h3>
+           
+              <label>
+                Nombre
+                <input type="text" name="nombre" placeholder="Tu nombre" required style="width:100%; margin-top:0.4rem; padding:0.65rem; border-radius:12px; border:1px solid rgba(15,23,42,0.18);" />
+              </label>
+              <label style="display:block; margin-top:1rem;">
+                Mensaje
+                <textarea name="mensaje" placeholder="Cuéntame sobre tu proyecto" required rows="4" style="width:100%; margin-top:0.4rem; padding:0.65rem; border-radius:12px; border:1px solid rgba(15,23,42,0.18);"></textarea>
+              </label>
+              <button type="submit" class="btn-primary" style="width:100%; justify-content:center; margin-top:1rem;">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3 style="margin-top:0;">Mi Portafolio</h3>
+        <p class="small">Haz clic en las imágenes para ver tus proyectos detallados. Puedes reemplazarlas en <code>images/</code>.</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0;">Enlaces rápidos</h3>
+        <ul style="padding-left:1rem; margin:0; list-style: none;">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-top:0;">Sígueme</h3>
+        <p class="small">Puedes agregar tus redes sociales aquí para que los clientes te encuentren fácilmente.</p>
+      </div>
+    </div>
+    <p class="small" style="text-align:center; margin-top:1.5rem;">© 2026 Mi Portafolio - Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
